@@ -1,4 +1,4 @@
-const kataKunci = [
+const keywords = [
     "javascript",
     "rush",
     "html",
@@ -10,28 +10,39 @@ const kataKunci = [
     "siapa pencipta algoritma?"
 ];
 
-let algoritma = (searchEngine) => {
-    
-    let x;
-    for(let i = 0; i <= kataKunci.length; i++) {
-        if(searchEngine == kataKunci[i]) {
-            x = (kataKunci[i]);
-            if(kataKunci.slice(8) == x) {
-                x = ("Penemu algoritma adalah Al Khawarizmi, seorang jenius yang mahir dalam matematika, geografi, astronomi, dan lain sebagainya. Dalam bukunya The History of Arab, Phillip K. Hitti menyebut Al Khawarizmi sebagai tokoh utama pada awal sejarah matematikan Arab.");
-                
+const jawaban = [
+    "Penemu algoritma adalah Al Khawarizmi, seorang jenius yang mahir dalam matematika, geografi, astronomi, dan lain sebagainya. Dalam bukunya The History of Arab, Phillip K. Hitti menyebut Al Khawarizmi sebagai tokoh utama pada awal sejarah matematikan Arab.",
+];
+
+function searchClick() {
+    let searchInput = document.getElementById("searchInput").value;
+    let outputSearch = document.getElementById("output");
+
+    let searchResult = algoritma(searchInput);
+
+    if (searchResult) {
+        outputSearch.innerHTML = `
+            <p>${searchResult}</p>
+        `;
+    } else {
+        outputSearch.innerHTML = `
+            <p>Kata kunci tidak ditemukan!</p>
+        `;
+    }
+
+    function algoritma(searchInput) {
+        for (let i = 0; i <= keywords.length; i++) {
+            if (keywords[i].includes(searchInput)) {
+                if (keywords[i] === jawaban[1]) {
+                    i += keywords.length;
+                    return jawaban[1];
+                } else {
+                    return searchInput;
+                }
             }
-
-            console.log(x);
-            
+            console.log(i);
         }
-        
+        return null;
     }
-
-    if(x == undefined){
-        console.log("kata kunci tidak ditemukan!");
-
-    }
-
 }
-
-let searchEngine = algoritma("siapa pencipta algoritma?");
+console.log(keywords.length);

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar with Search Box</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <script>
+        tailwind.config = {
+            theme: {
+            extend: {
+                colors: {
+                clifford: '#da373d',
+                }
+            }
+            }
+        }
+    </script> -->
+    <style>
+      * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+    
+    body {
+        font-family: Arial, sans-serif;
+    }
+    
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: #333;
+        color: #fff;
+    }
+    
+    .navbar-brand {
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+    
+    .navbar-menu {
+        list-style: none;
+        display: flex;
+    }
+    
+    .navbar-menu li {
+        margin-left: 20px;
+    }
+    
+    .navbar-menu a {
+        text-decoration: none;
+        color: #fff;
+        padding: 8px 15px;
+        transition: background 0.3s;
+    }
+    
+    .navbar-menu a:hover {
+        background: #575757;
+        border-radius: 5px;
+    }
+    
+    .navbar-search {
+        display: flex;
+        align-items: center;
+    }
+    
+    .navbar-search input {
+        padding: 5px;
+        border: none;
+        border-radius: 5px;
+        outline: none;
+    }
+    
+    .navbar-search button {
+        padding: 5px 10px;
+        border: none;
+        background-color: #575757;
+        color: #fff;
+        margin-left: 5px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+    
+    .navbar-search button:hover {
+        background-color: #444;
+    }
+    .form-output {
+        margin-top: 2rem;
+    }
+    .navbar-toogle {
+            display: none;
+    }
+    #output{
+        padding: 3rem;
+    }
+    /* Media Qurroes */
+    @media (max-width: 768px) {
+        .navbar-menu {
+            display: none;
+            flex-direction: column;
+            width: 100%;
+            text-align: center;
+        }
+    
+        .navbar-menu.active {
+            display: flex;
+        }
+    
+        .navbar-menu li {
+            margin: 10px 0;
+        }
+    
+        .navbar-toggle {
+            display: block;
+        }
+    
+        .navbar-search {
+            width: 100%;
+            justify-content: center;
+            margin-top: 10px;
+        }
+    
+        .navbar-search input {
+            width: 70%;
+        }
+        
+        
+    }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <!-- <button class="navbar-toggle" id="navbar-toggle">
+            ☰
+        </button> -->
+    
+        <ul class="navbar-menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="navbar-search">
+            <input type="search" placeholder="Search..." id="searchInput" class="text-black">
+            <button onclick="searchClick()">Search</button>
+        </div>
+    </nav>
+    <header class="form-output" id="form-output">
+        <p id="output" class="text-center text-white justify-center items-center bg-black"></p>
+    </header>
+    <!-- <script type="text/javascript" charset="utf-8">
+        document.getElementById("navbar-toggle").addEventListener("click", function() {
+            document.querySelector(".navbar-menu").classList.toggle("active");
+        });
+    </script> -->
+    <script src="algoritm.js"></script>
+</body>
+</html>
